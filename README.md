@@ -11,7 +11,7 @@ A docker environment for pwn in ctf based on **phusion/baseimage**, which is a m
 		-v $(pwd)/${ctf_name}:/ctf/work \
 		-p 23946:23946 \
 		--cap-add=SYS_PTRACE \
-		skysider/pwndocker
+		j4ckp4rd/pwndocker
 
 
 ### included software
