@@ -56,6 +56,14 @@ RUN git clone https://github.com/skysider/LibcSearcher.git LibcSearcher && \
     cd LibcSearcher && git submodule update --init --recursive && \
     python setup.py develop && cd libc-database && ./get || ls
 
+RUN git clone https://github.com/aquynh/capstone && \
+    cd capstone && ./make.sh && \
+    cd cstool && cp cstool /usr/local/bin/
+
+RUN git clone https://github.com/keystone-engine/keystone && \
+    cd keystone && mkdir build && cd build && ../make-share.sh && \
+    cd kstool && cp kstool /usr/local/bin/    
+
 COPY linux_server linux_server64 /ctf/
 
 RUN chmod a+x /ctf/linux_server /ctf/linux_server64
