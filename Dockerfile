@@ -28,6 +28,7 @@ RUN dpkg --add-architecture i386 && \
     socat \
     git \
     patchelf \
+    vim \
     file --fix-missing && \
     rm -rf /var/lib/apt/list/*
 
@@ -62,7 +63,9 @@ RUN git clone https://github.com/aquynh/capstone && \
 
 RUN git clone https://github.com/keystone-engine/keystone && \
     cd keystone && mkdir build && cd build && ../make-share.sh && \
-    cd kstool && cp kstool /usr/local/bin/    
+    cd kstool && cp kstool /usr/local/bin/
+    
+RUN wget https://gist.githubusercontent.com/J4ckP4rd/b2a1a3da5697c292d14985d048e88b5b/raw/3850c712ccdbd75a65991f15f706ec8077fc7522/.vimrc -O ~/.vimrc
 
 COPY linux_server linux_server64 /ctf/
 
