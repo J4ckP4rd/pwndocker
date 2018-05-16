@@ -29,6 +29,7 @@ RUN dpkg --add-architecture i386 && \
     git \
     patchelf \
     vim \
+    man \
     file --fix-missing && \
     rm -rf /var/lib/apt/list/*
 
@@ -36,7 +37,8 @@ RUN pip3 install --no-cache-dir \
     ropper \
     unicorn \
     keystone-engine \
-    capstone
+    capstone \
+    p2pipe
 
 RUN pip install --no-cache-dir \
     ropgadget \
